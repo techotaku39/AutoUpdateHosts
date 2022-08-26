@@ -1,6 +1,5 @@
-if (!A_IsAdmin)
+﻿if (!A_IsAdmin)
 	Run *RunAs %A_ScriptFullPath%
-
 FileEncoding UTF-8-RAW
 
 
@@ -11,15 +10,16 @@ SetTimer HostUpdate,3600000 ;Check interval
 return
 
 HostUpdate:
-GitHost:=WinHttp("https://gitee.com/isevenluo/github-hosts/raw/master/hosts")
-RegExMatch(GitHost,"# Update at: (.+)\R",RemoteVer)
-if (LocalVer!=RemoteVer)
+GitHost:=WinHttp("https://raw.hellogithub.com/hosts")
+RegExMatch(GitHost,"# Update time: (.+)\R",RemoteVer)
+if (RemoteVer!="" && RemoteVer!=LocalVer)
 {
+    LocalVer:=RemoteVer
     FileDelete %HostPath%
-    MyHost:="#Your hosts`n`n" GitHost ;Input here
+    FileRead MyHost,MyHost.txt
+    MyHost.=GitHost
     FileAppend %MyHost%,%HostPath%
     Run %ComSpec% /c "ipconfig /flushdns",,Hide
-    LocalVer:=RemoteVer
 }
 return
 
