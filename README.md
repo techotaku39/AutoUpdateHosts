@@ -8,6 +8,6 @@ AHK v1
 1. Light
 2. Can add your own hosts
 
-## Uasge
+## Usage
 1. Turn off Read Only of hosts
 2. Edit check interval and your hosts in files
