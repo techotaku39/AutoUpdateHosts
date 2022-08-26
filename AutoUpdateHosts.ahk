@@ -26,6 +26,7 @@ return
 
 #NoEnv
 #Persistent
+#SingleInstance Force
 WinHttp(url,method:="GET",data:="")
 {
     try
