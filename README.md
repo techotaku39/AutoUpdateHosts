@@ -1,5 +1,5 @@
 # AutoUpdateHosts
-[自动更新Hosts工具 – Github – AutoAHK](https://www.autoahk.com/?p=41147?viewtoken=9b6ee5707d1e9f562c6244063e226d4b)
+[自动更新Hosts工具 – Github – AutoAHK](https://www.autoahk.com/?p=41147)
 
 ## Require
 AHK v1
